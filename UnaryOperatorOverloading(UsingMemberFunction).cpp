@@ -8,34 +8,34 @@ public:
     {
         this->a = a;
     };
-    void operator+();
+    void operator++();
+    void operator--();
     void operator-();
-    void operator~();
     int display()
     {
         return a;
     }
 };
-void A::operator+()
+void A::operator++()
 {
     a = a + 5;
 }
-void A::operator-()
+void A::operator--()
 {
     a = a - 1;
 }
-void A::operator~()
+void A::operator-()
 {
-    a = ~a;
+    a = -(a);
 }
 int main()
 {
-    A obj(5);
-    +obj;
+    A obj(12);
+    ++obj;
+    cout << obj.display() << endl;
+    --obj;
     cout << obj.display() << endl;
     -obj;
-    cout << obj.display() << endl;
-    ~obj;
     cout << obj.display() << endl;
     return 0;
 }
